@@ -1,7 +1,7 @@
 //Data for retreaving a Token from spotify
 const clientId = "pTAHIBwNsC5VuQLaIs10lg"; // your clientId
 const clientSecret = "JS7cF7Ve730_YhlWNsO-aObZKFqS8w";
-export const redirectUrl = "http://localhost:3000"; // your redirect URL - must be localhost URL and/or HTTPS
+export const redirectUrl = "https://zer0-2.netlify.app"; // your redirect URL - must be localhost URL and/or HTTPS
 
 const authorizationEndpoint = "https://www.reddit.com/api/v1/authorize";
 const tokenEndpoint = "https://www.reddit.com/api/v1/access_token";
