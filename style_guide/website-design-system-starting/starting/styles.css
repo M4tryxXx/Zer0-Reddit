@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    margin: 30px 10px;
+}
+
+#text:hover {
+    font-size: 30;
+    border-color: red;
+    outline: 10px solid coral;
+    size-adjust: 20;
+}

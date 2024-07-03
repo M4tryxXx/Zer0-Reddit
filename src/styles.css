@@ -1,0 +1,23 @@
+:root {
+  --buttons: hsl(0, 0%, 75%);
+  --textColor: hsl(161, 78%, 93%);
+  --containerBackground: hsl(184, 89%, 4%);
+  --bodyBackground: hsl(193, 78%, 7%);
+}
+body {
+  background: var(--bodyBackground);
+  color: var(--textColor);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 900px;
+  margin: auto;
+}
+.main {
+  display: flex;
+}
+.main-card {
+  background: var(--containerBackground);
+}

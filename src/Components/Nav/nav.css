@@ -1,0 +1,40 @@
+:root {
+  --buttons: hsl(0, 0%, 75%);
+  --textColor: hsl(161, 78%, 93%);
+  --containerBackground: hsl(184, 89%, 4%);
+  --bodyBackground: hsl(193, 78%, 7%);
+  --buttonText: hsl(285, 100%, 6%);
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+nav ul li {
+  list-style-type: none;
+  margin: 2px 10px;
+}
+nav ul li a:not(.active) {
+  /* text-decoration-thickness: 3px;
+    text-underline-offset: 8px; */
+  background: var(--buttons);
+  color: var(--buttonText);
+  font-weight: bold;
+  padding: 3px 15px;
+  border-radius: 4px;
+  box-shadow: black 2px 1px 10px;
+  border: solid 0.1mm;
+  border-radius: 5px;
+}
+.active {
+  background: var(--containerBackground);
+  color: var(--textColor);
+  font-weight: bold;
+  padding: 3px 15px;
+  border-radius: 4px;
+  box-shadow: black 2px 1px 10px;
+  border: solid 0.1mm;
+  border-radius: 5px;
+}

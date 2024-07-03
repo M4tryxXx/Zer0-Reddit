@@ -1,0 +1,28 @@
+:root {
+  --buttons: hsl(0, 0%, 75%);
+  --textColor: hsl(161, 78%, 93%);
+  --containerBackground: hsl(184, 89%, 4%);
+  --bodyBackground: hsl(193, 78%, 7%);
+  --buttonText: hsl(285, 100%, 6%);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(#20322089, rgba(4, 4, 4, 0.439), #20322089);
+  max-width: 1200px;
+  margin: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+footer {
+  text-align: center;
+  font-weight: bold;
+}

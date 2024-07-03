@@ -1,0 +1,125 @@
+/* Global styles */
+body {
+  width: 85%;
+  margin: auto;
+}
+
+/* Header Styles */
+header {
+  border: 5px double black;
+  margin: 10px;
+}
+
+header h1 {
+  margin: 2% 5%;
+}
+
+/* Horizontal line and Paragraph styles */
+hr {
+  width: 95%;
+}
+
+p {
+  margin: 8px;
+}
+
+/* Multimple grouping div elements  */
+.content {
+  border: 5px double black;
+  margin: 10px;
+}
+.description {
+  margin: 2% 5%;
+}
+.contentflex {
+  text-align: center;
+}
+.colorcontent {
+  width: 320px;
+  height: 250px;
+  border: 2px solid gray;
+  text-align: center;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* Color Styles */
+
+.silver {
+  background-color: hsl(0, 0%, 75%);
+  width: 300px;
+  height: 150px;
+  border: 3px solid gray;
+  text-align: center;
+  margin: 8px auto;
+}
+
+.sea-green {
+  background-color: hsl(161, 100%, 60%);
+  width: 300px;
+  height: 150px;
+  border: 3px solid gray;
+  text-align: center;
+  margin: 8px auto;
+}
+
+.dark-turqoise {
+  background-color: hsl(184, 92%, 10%);
+  width: 300px;
+  height: 150px;
+  border: 3px solid gray;
+  text-align: center;
+  margin: 8px auto;
+  color: silver;
+}
+
+.blue-tint {
+  background-color: hsl(193, 78%, 7%);
+  color: silver;
+  width: 300px;
+  height: 150px;
+  border: 3px solid gray;
+  text-align: center;
+  margin: 8px auto;
+}
+
+/* Font Styles */
+
+.fonts {
+  text-align: left;
+  margin: 10px 20px;
+
+  display: inline-block;
+  width: 350px;
+}
+
+.times {
+  font-family: times;
+}
+
+.verdana {
+  font-family: verdana;
+}
+
+.merriweather {
+  font-family: "Merriweather";
+}
+
+/* Text Styles */
+
+.normal {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text {
+  padding: 15px;
+}
