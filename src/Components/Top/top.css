@@ -12,7 +12,7 @@
   border-radius: 8px;
   box-shadow: black 2px 1px 10px;
 }
-@media screen and(max-width: 570px) {
+@media screen and (max-width: 570px) {
   .cards-container {
     width: 95%;
   }
