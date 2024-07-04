@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import {
   TiArrowUpOutline,
   TiArrowUpThick,
@@ -8,6 +8,13 @@ import {
   TiMessage,
 } from "react-icons/ti";
 import "./card.css";
+
+export const handleFullScreen = (e) => {
+  document.getElementById("full-screen").src = e.target.id;
+  document.getElementById("full-screen-image").style.display = "block";
+  console.log(e.target.src);
+};
+export let postForPost;
 
 export default function Card({
   keyNumber,
@@ -18,8 +25,11 @@ export default function Card({
   author,
   ups,
   comms,
+  id,
+  obj,
 }) {
   const [vote, setVote] = useState(0);
+  const navigate = useNavigate();
   let upArrow;
   let downArrow;
 
@@ -56,6 +66,10 @@ export default function Card({
       setVote(0);
     }
   };
+  const handleClick = (e) => {
+    navigate(e.target.id);
+    postForPost = obj;
+  };
 
   return (
     <div className="main-card" key={keyNumber}>
@@ -64,21 +78,34 @@ export default function Card({
           <img src="" alt="" />
           <p>By: {author}</p>
         </div>
-
-        <h3 className="text h2">{title}</h3>
+        <h3 className="text h2 post-link" id={id} onClick={handleClick}>
+          {title}
+        </h3>
       </div>
-      <Link to="/cards/card">
-        {imageUrl ? <img src={imageUrl} alt={`Post Thumbnail`} /> : ""}
+      {imageUrl ? (
+        <div
+          className="img"
+          style={{
+            backgroundImage: `url("${imageUrl}")`,
+            width: "100%",
+            height: "350px",
+            backgroundSize: "cover",
+          }}
+          id={imageUrl}
+          onClick={handleFullScreen}
+        ></div>
+      ) : (
+        ""
+      )}
 
-        {videoUrl ? (
-          <video controls className="video">
-            {" "}
-            <source src={videoUrl} type="video/webm" />{" "}
-          </video>
-        ) : (
-          ""
-        )}
-      </Link>
+      {videoUrl ? (
+        <video controls className="video">
+          {" "}
+          <source src={videoUrl} type="video/webm" />{" "}
+        </video>
+      ) : (
+        ""
+      )}
       <div className="card-text">
         <p className="text para">{description}</p>
       </div>
@@ -95,7 +122,9 @@ export default function Card({
           </div>
         </div>
         <div className="comments">
-          <TiMessage />
+          <div className="commLink">
+            <TiMessage />
+          </div>
           <p>{comms}</p>
         </div>
       </div>

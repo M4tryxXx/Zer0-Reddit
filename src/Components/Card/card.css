@@ -9,10 +9,12 @@
   text-align: center;
   overflow-wrap: break-word;
 }
-.main-card img {
-  width: 100%;
+.img {
   border-radius: 8px;
   margin-top: 10px;
+}
+.img:hover {
+  cursor: pointer;
 }
 a {
   border: none;
@@ -24,7 +26,7 @@ a {
   padding: 10px;
 }
 .text {
-  margin: 0;
+  margin: 10px auto;
   padding: 0 15px;
 }
 .video {
@@ -54,15 +56,32 @@ a {
   width: 17px;
   height: 17px;
 }
+.down-container:hover {
+  cursor: pointer;
+}
 .up {
   padding: 0;
   width: 17px;
   height: 17px;
 }
+.up:hover {
+  cursor: pointer;
+}
 .comments {
   width: 15%;
   margin: 0 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+.commLink {
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+}
+.commLink:hover {
+  cursor: pointer;
+}
+.post-link:hover {
+  cursor: pointer;
 }

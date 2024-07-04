@@ -8,6 +8,7 @@ import { currentToken } from "../Auth/Auth";
 import NextPrev from "../NextPrevButtons/NextPrevButtons";
 import { useSelector } from "react-redux";
 import { loadNew } from "./newSlice";
+import { handleCloseFullScreen } from "../Popular/Popular";
 
 const now = new Date();
 export const currentTime = now.getTime();
@@ -17,27 +18,6 @@ console.log(expireTime > currentTime);
 let cards = [];
 let author = "";
 
-// const tryNextPage = async (next) => {
-//   const data = fetch("https://oauth.reddit.com/new", {
-//     headers: {
-//       "Content-Type": "application/x-www-form-urlencoded",
-//       authorization: "bearer " + currentToken.access_token,
-//     },
-//     data: {before: next,
-//       after: next,
-//       limit: 50
-//     }
-//   }).then((data) => {
-//     return data.json();
-//   });
-
-//   const response = await data;
-//   console.log(response);
-// };
-
-// console.log(posts);
-// console.log("Lungimea listei children este: ", posts.data.children.length);
-
 export default function New() {
   const posts = useSelector((state) => state.new);
   console.log(posts);
@@ -46,13 +26,21 @@ export default function New() {
   if (expireTime > currentTime && posts.newPosts) {
     cards = [];
     for (let i = 0; i < posts.newPosts.data.children.length; i++) {
+      let videoEmbedSrc = "";
+      let toCheck = posts.newPosts.data.children[i].data.media;
+      if (toCheck) {
+        // let src = posts.popularPosts.data.children[i].data.media.embed.html;
+        // videoEmbedSrc = src.replace(/&lt;/g, "<");
+        // let srcTwo = videoEmbedSrc.replace(/&gt;/g, ">");
+        console.log(toCheck);
+      }
       if (posts.newPosts.data.children[i].data.author !== "[deleted]") {
         author = posts.newPosts.data.children[i].data.author;
       }
       if (posts.newPosts.data.children[i].data.is_video) {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.newPosts.data.children[i].data.id}
             title={posts.newPosts.data.children[i].data.title}
             description={posts.newPosts.data.children[i].data.selftext}
             videoUrl={
@@ -62,29 +50,35 @@ export default function New() {
             author={author}
             ups={posts.newPosts.data.children[i].data.ups}
             comms={posts.newPosts.data.children[i].data.num_comments}
+            id={posts.newPosts.data.children[i].data.id}
+            obj={posts.newPosts.data.children[i]}
           />
         );
       } else if (posts.newPosts.data.children[i].data.thumbnail !== "self") {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.newPosts.data.children[i].data.id}
             title={posts.newPosts.data.children[i].data.title}
             description={posts.newPosts.data.children[i].data.selftext}
             imageUrl={posts.newPosts.data.children[i].data.url}
             author={author}
             ups={posts.newPosts.data.children[i].data.ups}
             comms={posts.newPosts.data.children[i].data.num_comments}
+            id={posts.newPosts.data.children[i].data.id}
+            obj={posts.newPosts.data.children[i]}
           />
         );
       } else {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.newPosts.data.children[i].data.id}
             title={posts.newPosts.data.children[i].data.title}
             description={posts.newPosts.data.children[i].data.selftext}
             author={author}
             ups={posts.newPosts.data.children[i].data.ups}
             comms={posts.newPosts.data.children[i].data.num_comments}
+            id={posts.newPosts.data.children[i].data.id}
+            obj={posts.newPosts.data.children[i]}
           />
         );
       }
@@ -93,6 +87,12 @@ export default function New() {
 
   return (
     <>
+      <div id="full-screen-image">
+        <button className="close-full-screen" onClick={handleCloseFullScreen}>
+          X
+        </button>
+        <img id="full-screen" src="" alt="" />
+      </div>
       <div className="cards-container">
         {posts.isLoading ? <h3>Loading New Posts...</h3> : cards}
         <NextPrev

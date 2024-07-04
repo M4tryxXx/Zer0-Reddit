@@ -1,4 +1,5 @@
 import React from "react";
+import "./logIn.css";
 import { handleLoginWithRedditClick } from "../Auth/Auth";
 
 const handleLogin = async () => {

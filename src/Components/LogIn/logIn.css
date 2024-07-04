@@ -1,28 +1,24 @@
-.profile {
+:root {
+  --buttons: hsl(0, 0%, 75%);
+  --textColor: hsl(161, 78%, 93%);
+  --containerBackground: hsl(184, 89%, 4%);
+  --bodyBackground: hsl(193, 78%, 7%);
+  --buttonText: hsl(285, 100%, 6%);
+}
+#login {
   text-align: center;
 }
-.profile > img {
-  border-radius: 100%;
-}
-.profile > p {
-  margin: 0;
-  font-weight: bold;
-}
-.profile > .button {
-  margin: 10px auto;
-}
-.button {
+#login-button {
   background-image: linear-gradient(var(--buttons), hsl(0, 0%, 42%));
-  color: var(--buttonText);
   color: var(--buttonText);
   font-weight: bold;
   padding: 3px 15px;
   border-radius: 4px;
   box-shadow: var(--buttons) 1px 1px 0px;
-  border: solid 0.1mm;
+  border: solid gray 0.1mm;
   border-radius: 5px;
 }
-.button:hover {
+#login-button:hover {
   cursor: pointer;
   background-image: linear-gradient(var(--buttons), hsl(0, 0%, 24%));
   color: var(--buttonText);
@@ -33,7 +29,7 @@
   border: solid gray 0.1mm;
   border-radius: 5px;
 }
-.button:active {
+#login-button:active {
   cursor: pointer;
   background-image: linear-gradient(hsl(0, 0%, 24%), var(--buttons));
   color: var(--buttonText);

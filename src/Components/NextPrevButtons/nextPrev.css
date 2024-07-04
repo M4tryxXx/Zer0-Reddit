@@ -5,3 +5,9 @@
   width: 20%;
   margin: 20px auto;
 }
+.next:hover {
+  cursor: pointer;
+}
+.prev:hover {
+  cursor: pointer;
+}

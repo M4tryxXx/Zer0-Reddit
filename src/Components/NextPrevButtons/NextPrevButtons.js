@@ -20,7 +20,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowLeft />
             </button>
           ) : (
-            <button className="prev" disabled>
+            <button className="prev-disabled" disabled>
               <SlArrowLeft />
             </button>
           )}
@@ -34,7 +34,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowRight />
             </button>
           ) : (
-            <button className="next" disabled>
+            <button className="next-disabled" disabled>
               <SlArrowRight />
             </button>
           )}
@@ -48,7 +48,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowLeft />
             </button>
           ) : (
-            <button className="prev" disabled>
+            <button className="prev-disabled" disabled>
               <SlArrowLeft />
             </button>
           )}
@@ -62,7 +62,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowRight />
             </button>
           ) : (
-            <button className="next" disabled>
+            <button className="next-disabled" disabled>
               <SlArrowRight />
             </button>
           )}
@@ -76,7 +76,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowLeft />
             </button>
           ) : (
-            <button className="prev" disabled>
+            <button className="prev-disabled" disabled>
               <SlArrowLeft />
             </button>
           )}
@@ -90,7 +90,7 @@ export default function NextPrev({ requestFrom, next, prev }) {
               <SlArrowRight />
             </button>
           ) : (
-            <button className="next" disabled>
+            <button className="next-disabled" disabled>
               <SlArrowRight />
             </button>
           )}

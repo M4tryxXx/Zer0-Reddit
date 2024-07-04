@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Card from "../Card/Card";
 import Skeleton from "react-loading-skeleton";
-import { Link } from "react-router-dom";
 import "./top.css";
 import NextPrev from "../NextPrevButtons/NextPrevButtons";
 import { useSelector } from "react-redux";
 import { currentTime, expireTime } from "../Auth/Auth";
+import { handleCloseFullScreen } from "../Popular/Popular";
 // import { loadPopular } from "./popularSlice";
 
 let cards = [];
@@ -19,13 +19,21 @@ export default function Top({ next, prev }) {
   if (expireTime > currentTime && posts.topPosts) {
     cards = [];
     for (let i = 0; i < posts.topPosts.data.children.length; i++) {
+      let videoEmbedSrc = "";
+      let toCheck = posts.topPosts.data.children[i].data.media;
+      if (toCheck) {
+        // let src = posts.popularPosts.data.children[i].data.media.embed.html;
+        // videoEmbedSrc = src.replace(/&lt;/g, "<");
+        // let srcTwo = videoEmbedSrc.replace(/&gt;/g, ">");
+        console.log(toCheck);
+      }
       if (posts.topPosts.data.children[i].data.author !== "[deleted]") {
         author = posts.topPosts.data.children[i].data.author;
       }
       if (posts.topPosts.data.children[i].data.is_video) {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.topPosts.data.children[i].data.id}
             title={posts.topPosts.data.children[i].data.title}
             description={posts.topPosts.data.children[i].data.selftext}
             videoUrl={
@@ -35,29 +43,35 @@ export default function Top({ next, prev }) {
             author={author}
             ups={posts.topPosts.data.children[i].data.ups}
             comms={posts.topPosts.data.children[i].data.num_comments}
+            id={posts.topPosts.data.children[i].data.id}
+            obj={posts.topPosts.data.children[i]}
           />
         );
       } else if (posts.topPosts.data.children[i].data.thumbnail !== "self") {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.topPosts.data.children[i].data.id}
             title={posts.topPosts.data.children[i].data.title}
             description={posts.topPosts.data.children[i].data.selftext}
             imageUrl={posts.topPosts.data.children[i].data.url}
             author={author}
             ups={posts.topPosts.data.children[i].data.ups}
             comms={posts.topPosts.data.children[i].data.num_comments}
+            id={posts.topPosts.data.children[i].data.id}
+            obj={posts.topPosts.data.children[i]}
           />
         );
       } else {
         cards.push(
           <Card
-            keyNumber={i}
+            keyNumber={posts.topPosts.data.children[i].data.id}
             title={posts.topPosts.data.children[i].data.title}
             description={posts.topPosts.data.children[i].data.selftext}
             author={author}
             ups={posts.topPosts.data.children[i].data.ups}
             comms={posts.topPosts.data.children[i].data.num_comments}
+            id={posts.topPosts.data.children[i].data.id}
+            obj={posts.topPosts.data.children[i]}
           />
         );
       }
@@ -66,6 +80,12 @@ export default function Top({ next, prev }) {
 
   return (
     <>
+      <div id="full-screen-image">
+        <button className="close-full-screen" onClick={handleCloseFullScreen}>
+          X
+        </button>
+        <img id="full-screen" src="" alt="" />
+      </div>
       <div className="cards-container">
         {posts.isLoading ? <h3>Loading Top Posts...</h3> : cards}
         <NextPrev

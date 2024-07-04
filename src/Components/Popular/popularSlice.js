@@ -10,8 +10,9 @@ export const loadPopular = createAsyncThunk(
         "Content-Type": "application/x-www-form-urlencoded",
         authorization: "bearer " + currentToken.access_token,
       },
+      limit: 50,
       count: 555,
-      after: next,
+      before: next,
     }).then((data) => {
       return data.json();
     });

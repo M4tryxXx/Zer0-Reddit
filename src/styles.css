@@ -15,9 +15,6 @@ body {
   max-width: 900px;
   margin: auto;
 }
-.main {
-  display: flex;
-}
 .main-card {
   background: var(--containerBackground);
 }

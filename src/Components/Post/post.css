@@ -1,0 +1,27 @@
+.main-post {
+  width: 90%;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 15px;
+  margin: auto;
+}
+.title {
+  margin: auto;
+  text-align: center;
+}
+.media {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-image {
+  width: 90%;
+  max-height: 100%;
+  border-radius: 8px;
+  margin: 10px auto;
+}
+.video {
+  max-height: 500px;
+  width: auto;
+}
