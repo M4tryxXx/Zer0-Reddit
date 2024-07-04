@@ -11,7 +11,7 @@ import "./card.css";
 
 export const handleFullScreen = (e) => {
   document.getElementById("full-screen").src = e.target.id;
-  document.getElementById("full-screen-image").style.display = "block";
+  document.getElementById("full-screen-image").style.display = "flex";
   console.log(e.target.src);
 };
 export let postForPost;

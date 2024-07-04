@@ -25,6 +25,8 @@
   border: 2px double rgba(255, 255, 255, 0.446);
   text-align: center;
   display: none;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
 }
 #full-screen {
