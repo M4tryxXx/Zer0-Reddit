@@ -61,7 +61,7 @@ export default function Popular({ next, prev }) {
             keyNumber={posts.popularPosts.data.children[i].data.id}
             title={posts.popularPosts.data.children[i].data.title}
             description={posts.popularPosts.data.children[i].data.selftext}
-            imageUrl={posts.popularPosts.data.children[i].data.thumbnail}
+            imageUrl={posts.popularPosts.data.children[i].data.url}
             author={author}
             ups={posts.popularPosts.data.children[i].data.ups}
             comms={posts.popularPosts.data.children[i].data.num_comments}
