@@ -23,5 +23,5 @@
 }
 .video {
   max-height: 500px;
-  width: auto;
+  max-width: 90%;
 }
