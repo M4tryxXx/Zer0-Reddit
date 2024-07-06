@@ -20,9 +20,9 @@ export default function Profile() {
 
   //   useEffect(() => {}, [profile.isLoading]);
 
-  console.log(profile);
+//   console.log(profile);
   if (currentToken.access_token && expireTime > currentTime) {
-    console.log(profile);
+    // console.log(profile);
 
     if (profile.profile) {
       return (

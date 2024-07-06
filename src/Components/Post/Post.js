@@ -8,7 +8,7 @@ import { handleCloseFullScreen } from "../Popular/Popular";
 export default function Post() {
   if (postForPost) {
     let mediaUrl;
-    console.log(postForPost);
+    // console.log(postForPost);
     if (postForPost.data.is_video) {
       mediaUrl = (
         <video controls className="video">

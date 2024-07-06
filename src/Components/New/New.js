@@ -26,14 +26,6 @@ export default function New() {
   if (expireTime > currentTime && posts.newPosts) {
     cards = [];
     for (let i = 0; i < posts.newPosts.data.children.length; i++) {
-      let videoEmbedSrc = "";
-      let toCheck = posts.newPosts.data.children[i].data.media;
-      if (toCheck) {
-        // let src = posts.popularPosts.data.children[i].data.media.embed.html;
-        // videoEmbedSrc = src.replace(/&lt;/g, "<");
-        // let srcTwo = videoEmbedSrc.replace(/&gt;/g, ">");
-        console.log(toCheck);
-      }
       if (posts.newPosts.data.children[i].data.author !== "[deleted]") {
         author = posts.newPosts.data.children[i].data.author;
       }

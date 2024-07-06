@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <div className="cards-container">
         <h2 className="title">Welcome to Zer0 App</h2>
+        <br />
         <p>Please start by choosing a category!</p>
       </div>
     </>

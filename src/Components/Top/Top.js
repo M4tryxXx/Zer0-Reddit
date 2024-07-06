@@ -19,14 +19,6 @@ export default function Top({ next, prev }) {
   if (expireTime > currentTime && posts.topPosts) {
     cards = [];
     for (let i = 0; i < posts.topPosts.data.children.length; i++) {
-      let videoEmbedSrc = "";
-      let toCheck = posts.topPosts.data.children[i].data.media;
-      if (toCheck) {
-        // let src = posts.popularPosts.data.children[i].data.media.embed.html;
-        // videoEmbedSrc = src.replace(/&lt;/g, "<");
-        // let srcTwo = videoEmbedSrc.replace(/&gt;/g, ">");
-        console.log(toCheck);
-      }
       if (posts.topPosts.data.children[i].data.author !== "[deleted]") {
         author = posts.topPosts.data.children[i].data.author;
       }
