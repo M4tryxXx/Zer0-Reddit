@@ -4,7 +4,6 @@ import { loadPopular } from "../Popular/popularSlice";
 import { loadNew } from "../New/newSlice";
 import { NavLink } from "react-router-dom";
 import "./nav.css";
-import ROUTES from "../../App/routes";
 import { loadTop } from "../Top/topSlice";
 
 export default function Nav() {
