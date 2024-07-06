@@ -12,7 +12,7 @@ import Home from "../Components/Home/Home";
 import Post from "../Components/Post/Post";
 
 export default function App() {
-  if (expireTime < currentTime) {
+  if (expireTime < currentTime || !currentToken.access_token) {
     return <LogIn />;
   }
   return (
