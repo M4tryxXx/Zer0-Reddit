@@ -12,7 +12,6 @@ import Home from "../Components/Home/Home";
 import Post from "../Components/Post/Post";
 
 export default function App() {
-  console.log(expireTime > currentTime);
   if (expireTime < currentTime) {
     return <LogIn />;
   }
